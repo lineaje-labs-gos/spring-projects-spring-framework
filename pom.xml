@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.springframework</groupId>
   <artifactId>spring-beans</artifactId>
@@ -31,9 +29,10 @@
     <url>https://jira.springsource.org/browse/SPR</url>
   </issueManagement>
   <scm>
-    <connection>scm:git:git://github.com/spring-projects/spring-framework</connection>
-    <developerConnection>scm:git:git://github.com/spring-projects/spring-framework</developerConnection>
-    <url>https://github.com/spring-projects/spring-framework</url>
+    <connection>scm:git:spring-projects-spring-framework</connection>
+    <developerConnection>scm:git:spring-projects-spring-framework</developerConnection>
+    <url>spring-projects-spring-framework</url>
+    <tag>4.1.4-lineaje-01</tag>
   </scm>
   <dependencies>
     <dependency>
@@ -71,4 +70,34 @@
       <optional>true</optional>
     </dependency>
   </dependencies>
+  <contributors>
+    <contributor>
+      <name>Lineaje DepFixer</name>
+      <email>221268890+Lineaje-DepFixer@users.noreply.github.com</email>
+    </contributor>
+  </contributors>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <version>3.2.4</version>
+        <executions>
+          <execution>
+            <id>sign-artifacts</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>sign</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <gpgArguments>
+            <arg>--pinentry-mode</arg>
+            <arg>loopback</arg>
+          </gpgArguments>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
